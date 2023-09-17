@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Iniciar sesion | Crear cuenta</title>
+    <link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+    <div class="wrapper">
+       <div class="title-text">
+          <div class="title login">
+             Iniciar sesion
+          </div>
+          <div class="title signup">
+             Iniciar sesion
+          </div>
+       </div>
+       <div class="form-container">
+          <div class="slide-controls">
+             <input type="radio" name="slide" id="login" checked>
+             <input type="radio" name="slide" id="signup">
+             <label for="login" class="slide login">Acceder</label>
+             <label for="signup" class="slide signup">Crear cuenta</label>
+             <div class="slider-tab"></div>
+          </div>
+          <div class="form-inner">
+            <form action="/matriculas" method="post">
+                <div class="field">
+                    <input type="text" class="form-control" id="usuario" name="usuario" required placeholder="Usuario">
+                </div>
+                <div class="field">
+                    <input type="password" class="form-control" id="contrasena" name="contrasena" required placeholder="Contraseña">
+                </div>
+                <div class="pass-link">
+                   <a href="#"></a>
+                </div>
+                <div class="field btn">
+                   <div class="btn-layer"></div>
+                   <input type="submit" value="Login">
+                </div>
+                <div class="signup-link">
+                   ¿No tienes cuenta? <a href="">Crear nueva cuenta</a>
+                </div>
+             </form>
+             <form action="/matriculas" method="post">
+                <div class="field">
+                    <input type="text" class="form-control" id="usuario" name="usuario" required>
+                </div>
+                <div class="field">
+                    <input type="password" class="form-control" id="contrasena" name="contrasena" required>
+                </div>
+                <div class="field">
+                   <input type="password" placeholder="Confirm Password" required>
+                </div>
+                <div class="field btn">
+                   <div class="btn-layer"></div>
+                   <input type="submit" value="SignUp">
+                </div>
+             </form>
+          </div>
+       </div>
+    </div>
+    <script src="js/script.js"></script>
+  </body>
+</html>

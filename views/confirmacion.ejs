@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Confirmación de Matrícula</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">Confirmación de Matrícula</h1>
+        <hr>
+
+        <h3>Curso seleccionado:</h3>
+        <p><strong><%= curso %></strong> </p>
+
+        <h3>Medio de pago seleccionado:</h3>
+        <p><strong><%= medioPago %></strong> </p>
+
+        <h3>Datos de confirmación:</h3>
+        <p>¡Su matrícula ha sido confirmada! Los siguientes son los detalles de su matrícula:</p>
+        
+        <ul>
+            <li><strong>Curso:</strong> <%= curso %></li>
+            <li><strong>Medio de Pago:</strong> <%= medioPago %></li>
+        </ul>
+        <h3>Costo Total:</h3>
+        <p>-----------------------------------------------------------</p>
+        <p><strong>Costo Total: S./ </strong> <span id="costoTotal"></span></p>
+        <p>-----------------------------------------------------------</p>
+    </div>
+
+</body>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const curso = "<%= curso %>"; 
+        const medioPago = "<%= medioPago %>"; 
+
+        // Define los costos de los módulos
+        const costos = {
+            Java: 1200,
+            PHP: 800,
+            ".NET": 1500,
+        };
+        let costoTotal = costos[curso];
+
+        // Aplica un descuento del 10% si se paga en efectivo
+        if (medioPago === "Pago en efectivo") {
+            costoTotal *= 0.9; 
+        }
+        document.getElementById("costoTotal").textContent = costoTotal;
+    });
+</script>
+
+</html>
